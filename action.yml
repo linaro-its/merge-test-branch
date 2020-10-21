@@ -1,0 +1,9 @@
+name: Merge test branch
+author: Philip Colmer (Linaro Ltd)
+description: |
+  Creates a branch named after the incoming owner and branch from the
+  current branch then pulls the incoming branch into it.
+runs:
+  using: "node12"
+  main: 'merge-branch.js'
+  post: 'cleanup-branch.js'
