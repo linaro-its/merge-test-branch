@@ -1,5 +1,8 @@
 name: Merge test branch
 author: Philip Colmer (Linaro Ltd)
+branding:
+  icon: "git-merge"
+  color: "green"
 description: |
   Creates a branch named after the incoming owner and branch from the
   current branch then pulls the incoming branch into it.
