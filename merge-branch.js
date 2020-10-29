@@ -9,6 +9,7 @@ try {
     const path = `${process.env["GITHUB_WORKSPACE"]}/${core.getInput("path")}`;
 
     execSync(`cd ${path}`);
+    console.loog(`cd ${path}`);
     console.log(`git checkout -b ${incoming_owner}-${incoming_branch} $GITHUB_BASE_REF`);
     console.log(execSync(`git checkout -b ${incoming_owner}-${incoming_branch} $GITHUB_BASE_REF`, { encoding: 'utf-8' }));
     console.log(`git pull ${incoming_repo} ${incoming_branch}`);
