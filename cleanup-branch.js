@@ -10,8 +10,8 @@ try {
     execSync(`cd ${path}`);
     console.log(`cd ${path}`);
     console.log(execSync("git reset --merge", { encoding: 'utf-8' }));
-    console.log("git checkout $GITHUB_BASE_REF");
-    console.log(execSync("git checkout $GITHUB_BASE_REF", { encoding: 'utf-8' }));
+    console.log(`git checkout ${process.env["GITHUB_BASE_REF"]}`);
+    console.log(execSync(`git checkout ${process.env["GITHUB_BASE_REF"]}`, { encoding: 'utf-8' }));
     console.log(`git branch -D ${incoming_owner}-${incoming_branch}`);
     console.log(execSync(`git branch -D ${incoming_owner}-${incoming_branch}`, { encoding: 'utf-8' }));
 } catch (error) {
