@@ -5,7 +5,9 @@ const execSync = require('child_process').execSync;
 try {
     const incoming_owner = github.context.payload.pull_request.head.repo.owner.login;
     const incoming_branch = github.context.payload.pull_request.head.ref;
-    execSync("cd $GITHUB_WORKSPACE");
+    const path = `${process.env["GITHUB_WORKSPACE"]}/${core.getInput("path")}`;
+
+    execSync(`cd ${path}`);
     console.log(execSync("git reset --merge", { encoding: 'utf-8' }));
     console.log("git checkout $GITHUB_BASE_REF");
     console.log(execSync("git checkout $GITHUB_BASE_REF", { encoding: 'utf-8' }));

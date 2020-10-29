@@ -6,6 +6,10 @@ branding:
 description: |
   Creates a branch named after the incoming owner and branch from the
   current branch then pulls the incoming branch into it.
+inputs:
+  path:
+    description: "Optional path to the branch relative to $GITHUB_WORKSPACE"
+    required: false
 runs:
   using: "node12"
   main: 'merge-branch.js'
