@@ -11,6 +11,6 @@ inputs:
     description: "Optional path to the branch relative to $GITHUB_WORKSPACE"
     required: false
 runs:
-  using: "node12"
+  using: "node16"
   main: 'merge-branch.js'
   post: 'cleanup-branch.js'

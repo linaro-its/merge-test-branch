@@ -13,7 +13,7 @@ An optional parameter, this specifies a path relative to `$GITHUB_WORKSPACE` whe
 ## Example usage
 
 ```yaml
-uses: linaro-its/merge-test-branch@v2
+uses: linaro-its/merge-test-branch@v2.7
 with:
     path: website
 ```
